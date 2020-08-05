@@ -1,4 +1,4 @@
-package bouncing_ball_ver_5;
+package bouncing_ball_ver_6_리듬게임따라하기;
 
 import java.awt.Color;
 import java.awt.Cursor;
