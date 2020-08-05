@@ -41,16 +41,6 @@ public class BouncingBall extends JFrame {
 	//각각 프로그램안에서 마우스의 X, Y 값 자체를 의미
 	private int mouseX, mouseY;
 
-	//*****여기서부터는내가!
-	private float ballRadius = 20;  //공 반지름
-	private float ballX = ballRadius+120;  //공 초기 x위치
-	private float ballY = ballRadius+80;  //공 초기 y위치
-	private float ballSpeedX = 10;  //공 x속도
-	private float ballSpeedY = 10;  //공 y속도
-	
-	private boolean isPlay = false;
-	//*****!여기까지는내가!
-	
 	public BouncingBall() {
 		// 원래 존재하던 메뉴바가 보이지 않게 해 줌
 		setUndecorated(true);
@@ -145,9 +135,6 @@ public class BouncingBall extends JFrame {
 				startButton.setVisible(false);
 				quitButton.setVisible(false);
 				background = new ImageIcon(Main.class.getResource("../images/밤하늘.jpg")).getImage();
-				
-				//*****내가추가!
-				isPlay = true;
 				
 			}
 		});
@@ -253,46 +240,4 @@ public class BouncingBall extends JFrame {
 		this.repaint();
 
 	}
-	
-	//*****여기서부터는내가!
-	class MyThread extends Thread {
-		public void run() {
-			while(true) {
-				ballX+=ballSpeedX;
-				ballY+=ballSpeedY;
-				if (ballX-ballRadius<0) {
-					ballSpeedX *= -1;
-					ballX = ballRadius;
-				} else if (ballX+ballRadius>Main.SCREEN_WIDTH) {
-					ballSpeedX*=-1;
-					ballX = Main.SCREEN_WIDTH-ballRadius;
-				}
-				if (ballY-ballRadius<0) {
-					ballSpeedY*=-1;
-					ballY = ballRadius;
-				} else if (ballY+ballRadius>Main.SCREEN_HEIGHT) {
-					ballSpeedY*=-1;
-					ballY = Main.SCREEN_HEIGHT-ballRadius;
-				}
-				if (isPlay)
-					repaint();
-				try {
-					Thread.sleep(50);  //공의 속도 조절
-				} catch (InterruptedException ex) {
-				}
-			}
-		}
-	}
-	
-	Thread t = new MyThread();
-	
-	 public void paintComponent(Graphics g) {
-		  super.paintComponents(g);
-
-		  g.setColor(Color.RED); // 빨간색으로 채움
-		  g.fillOval((int) (ballX - ballRadius), (int) (ballY - ballRadius),
-		    (int) (2 * ballRadius), (int) (2 * ballRadius)); // 원
-
-		 }
-	
 }
