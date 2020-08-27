@@ -11,7 +11,6 @@ public class Main {
 		
 		new BouncingBall(); //BouncingBall이라는 클래스의 객체를 만듦
 		
-
 	}
 
 }

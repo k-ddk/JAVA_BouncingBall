@@ -29,7 +29,7 @@ public class BouncingBall extends JFrame {
 		//그것의 이미지 인스턴스를 introBackground라는 변수에 초기화 해준다는 의미
 		//******* 이미지 파일 넣을 때 내가 만든 이미지 파일 넣으려면 카톡으로 말고 메일로 보내서!할 것 , 
 		//******* 카톡으로 다운받으면 크기가 자동으로 작아짐!
-		introBackground = new ImageIcon(Main.class.getResource("../images/introBackground.png")).getImage();
+		introBackground = new ImageIcon(Main.class.getResource("../Images/introBackground.png")).getImage();
 	}
 	
 	//메소드 추가해주기

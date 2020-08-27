@@ -64,7 +64,7 @@ public class BouncingBall extends JFrame {
 				//마우스가 올라갔을 때 손가락 모양으로 바뀜
 				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				//한 번만 실행되도록
-				Music buttonEnteredMusic = new Music("마우스호버.mp3", false);
+				Music buttonEnteredMusic = new Music("엥엥.mp3", false);
 				buttonEnteredMusic.start();
 				
 			}
@@ -74,13 +74,14 @@ public class BouncingBall extends JFrame {
 				exitButton.setIcon(exitButtonDefaultImage);
 				//다시 원래 모양의 마우스로 돌아감
 				exitButton.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+				
 			}
 			@Override
 			//버튼을 실제로 클릭했을 때
 			public void mousePressed(MouseEvent e) {
 				//한 번만 실행되도록 
 				//근데 이때 음악이 나옴과 동시에 프로그램이 종료되기 때문에 소리가 들릴 수 있도록
-				Music buttonEnteredMusic = new Music("마우스클릭_슈팅.mp3", false);
+				Music buttonEnteredMusic = new Music("피융.mp3", false);
 				buttonEnteredMusic.start();
 				try {
 					//소리를 듣고 종료될 수 있도록
@@ -111,7 +112,7 @@ public class BouncingBall extends JFrame {
 				//스크린에서의 각 x, y의 좌표를 가져음
 				int x = e.getXOnScreen();
 				int y = e.getYOnScreen();
-				//JFrame의 위치 바꿔주기
+				//JFrame의 위치 바꿔주기 , 메뉴바를 드래그하면 게임창에 그에 다라 이동될 수 있도록
 				setLocation(x-mouseX, y-mouseY);
 			}
 		});

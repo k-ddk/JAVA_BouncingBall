@@ -8,7 +8,7 @@ import javazoom.jl.player.Player; //ÄÁÆ®·Ñ + ½¬ÇÁÆ® + o ·Î ¶óÀÌºê·¯¸® import ÇØÁ
 
 public class Music extends Thread { //ÀÌ¶§ Thread¶õ ÇÁ·Î±×·¥ ¾ÈÀÇ ¶Ç ´Ù¸¥ ÀÛÀº ÇÁ·Î±×·¥ÀÌ¶ó »ı°¢ÇÏ¸é µÈ´Ù
 
-	private Player player;
+	private Player player;  //JAVAzoom »çÀÌÆ®¿¡¼­ ´Ù¿î¹Ş°í buildpath ÇØ¼­ ³Ö¾îÁà¾ßÁö ¾µ ¼ö ÀÖÀ½!
 	
 	//ÇöÀç °îÀÌ ¹«ÇÑ¹İº¹ÀÏÁö ¾Æ´Ô, ÇÑ ¹ø¸¸ Àç»ıÇÏ°í ³¡³¯ Áö¿¡ ´ëÇÑ ¼³Á¤
 	private boolean isloop;
@@ -17,7 +17,7 @@ public class Music extends Thread { //ÀÌ¶§ Thread¶õ ÇÁ·Î±×·¥ ¾ÈÀÇ ¶Ç ´Ù¸¥ ÀÛÀº Ç
 	private BufferedInputStream bis;
 	
 	//»ı¼ºÀÚ ¸¸µé±â
-	public Music(String name, boolean isloop) {
+	public Music(String name, boolean isloop) {  //°îÀÇ Á¦¸ñ°ú ÇØ´ç °îÀÌ ¹«ÇÑ ¹İº¹ÀÎÁö~
 		try {
 			//isloop º¯¼ö ÃÊ±âÈ­
 			this.isloop = isloop;
@@ -44,7 +44,7 @@ public class Music extends Thread { //ÀÌ¶§ Thread¶õ ÇÁ·Î±×·¥ ¾ÈÀÇ ¶Ç ´Ù¸¥ ÀÛÀº Ç
 		return player.getPosition();
 	}
 	
-	public void close() {
+	public void close() {  //À½¾ÇÀÌ ¾ğÁ¦ ½ÇÇàµÇ°í ÀÖ°Ç Ç×»ó Á¾·áÇÒ ¼ö ÀÖ°Ô ÇØÁÖ´Â ÇÔ¼ö<- »ç½Ç ÀÌ°Ç ¸®µë°ÔÀÓ ¸¸µå´Â µ¥¿¡ ÇÊ¿äÇÑ °Å ¾Æ¸¶ ³ª´Â ¾È ÇÊ¿äÇÑ °Å °°..À½./???
 		isloop = false;
 		player.close();
 		this.interrupt();
@@ -62,7 +62,7 @@ public class Music extends Thread { //ÀÌ¶§ Thread¶õ ÇÁ·Î±×·¥ ¾ÈÀÇ ¶Ç ´Ù¸¥ ÀÛÀº Ç
 				player = new Player(bis); //isloop °ªÀÌ true ¶ó¸é ÇØ´ç °îÀº ¹«ÇÑ ¹İº¹µÊ
 			} while(isloop) ;
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage());  //¿À·ù ¹ß»ı ½Ã ÇØ´ç ¿À·ù¸Ş½ÃÁö Ãâ·Â
 		}
 	}
 }
