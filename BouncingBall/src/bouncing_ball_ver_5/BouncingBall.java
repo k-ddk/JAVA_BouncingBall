@@ -31,6 +31,8 @@ public class BouncingBall extends JFrame {
 	private ImageIcon quitButtonHoverImage = new ImageIcon(Main.class.getResource("../images/quit_button(hover)_밝은하늘색.png"));
 	private ImageIcon quitButtonDefaultImage = new ImageIcon(Main.class.getResource("../images/quit_button(default).png"));
 	
+	//시작화면에서 다음화면으로 넘어갈 때 단순히 이 background라는 변수에 담긴 이미지를 바꿔주기만 할 거기 때문에~
+	//이름을 그냥 background로 바꿈
 	private Image background = new ImageIcon(Main.class.getResource("../images/introBackground_밤하늘내버전.png"))
 			.getImage();
 	
@@ -70,8 +72,8 @@ public class BouncingBall extends JFrame {
 				//마우스가 올라갔을 때 손가락 모양으로 바뀜
 				exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				//한 번만 실행되도록
-				Music buttonEnteredMusic = new Music("마우스호버.mp3", false);
-				buttonEnteredMusic.start();
+				//Music buttonEnteredMusic = new Music("엥엥.mp3", false);
+				//buttonEnteredMusic.start();
 				
 			}
 			@Override
@@ -86,7 +88,7 @@ public class BouncingBall extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				//한 번만 실행되도록 
 				//근데 이때 음악이 나옴과 동시에 프로그램이 종료되기 때문에 소리가 들릴 수 있도록
-				Music buttonEnteredMusic = new Music("마우스클릭_슈팅.mp3", false);
+				Music buttonEnteredMusic = new Music("피융.mp3", false);
 				buttonEnteredMusic.start();
 				try {
 					//소리를 듣고 종료될 수 있도록
@@ -112,8 +114,8 @@ public class BouncingBall extends JFrame {
 				//마우스가 올라갔을 때 손가락 모양으로 바뀜
 				startButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				//한 번만 실행되도록
-				Music buttonEnteredMusic = new Music("마우스호버.mp3", false);
-				buttonEnteredMusic.start();
+				//Music buttonEnteredMusic = new Music("엥엥.mp3", false);
+				//buttonEnteredMusic.start();
 				
 			}
 			@Override
@@ -128,12 +130,14 @@ public class BouncingBall extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				//한 번만 실행되도록 
 				//근데 이때 음악이 나옴과 동시에 프로그램이 종료되기 때문에 소리가 들릴 수 있도록
-				Music buttonEnteredMusic = new Music("마우스클릭_슈팅.mp3", false);
+				Music buttonEnteredMusic = new Music("피융.mp3", false);
 				buttonEnteredMusic.start();
 				
+				//버튼을 누르면 다음화면으로 넘어가야 하니까 이제
 				//시작 버튼과 나가기 버튼이 사라짐
 				startButton.setVisible(false);
 				quitButton.setVisible(false);
+				//시작화면에서 넘어갔을 때 나올 화면
 				background = new ImageIcon(Main.class.getResource("../images/밤하늘.jpg")).getImage();
 				
 			}
@@ -153,8 +157,8 @@ public class BouncingBall extends JFrame {
 				//마우스가 올라갔을 때 손가락 모양으로 바뀜
 				quitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 				//한 번만 실행되도록
-				Music buttonEnteredMusic = new Music("마우스호버.mp3", false);
-				buttonEnteredMusic.start();
+				//Music buttonEnteredMusic = new Music("엥엥.mp3", false);
+				//buttonEnteredMusic.start();
 				
 			}
 			@Override
@@ -169,7 +173,7 @@ public class BouncingBall extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				//한 번만 실행되도록 
 				//근데 이때 음악이 나옴과 동시에 프로그램이 종료되기 때문에 소리가 들릴 수 있도록
-				Music buttonEnteredMusic = new Music("마우스클릭_슈팅.mp3", false);
+				Music buttonEnteredMusic = new Music("피융.mp3", false);
 				buttonEnteredMusic.start();
 				try {
 					//소리를 듣고 종료될 수 있도록
